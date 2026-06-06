@@ -1,0 +1,13 @@
+# dependencies / tooling
+node_modules/
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+
+# azure / swa
+.azure/
+swa-cli.config.json.bak
+*.log

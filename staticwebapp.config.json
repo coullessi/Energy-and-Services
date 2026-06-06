@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/css/*", "/js/*", "*.{png,jpg,jpeg,gif,svg,ico,webp}"]
+  },
+  "routes": [
+    { "route": "/accueil", "redirect": "/index.html", "statusCode": 301 },
+    { "route": "/a-propos", "rewrite": "/a-propos.html" },
+    { "route": "/solutions", "rewrite": "/solutions.html" },
+    { "route": "/marques", "rewrite": "/marques.html" },
+    { "route": "/actualites", "rewrite": "/actualites.html" },
+    { "route": "/contact", "rewrite": "/contact.html" }
+  ],
+  "mimeTypes": {
+    ".json": "application/json",
+    ".webmanifest": "application/manifest+json"
+  },
+  "globalHeaders": {
+    "Cache-Control": "public, max-age=3600",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'self'"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  }
+}
